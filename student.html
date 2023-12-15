@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <select name="" id="select_data" class="form-control mt-4 mb-3" onclick="filterData(this.value)">
+            <option value="all">Select All Data</option>
+        </select>
+
+        <table class="table mt-5 mb-5 ">
+            <thead>
+                <tr>
+                    <td class="head">Student Name</td>
+                    <td class="head">Class</td>
+                    <td class="head">Father Name</td>
+                    <td class="head">Contact No</td>
+                    <td class="head">Group</td>
+                    <td class="head">Gender</td>
+                    <td class="head">Profile</td>
+                </tr>
+            </thead>
+            <tbody id="input_data">
+
+            </tbody>
+        </table>
+    </div>
+    <script src="student.js"></script>
+    <script>
+        // function DisplayAllData(){
+
+            for (var i=0 ; i<data.length ; i++){
+            document.getElementById('input_data').innerHTML+=`
+                
+
+                <tr>
+                    <td class="head">${data[i].student_name}</td>
+                    <td class="head">${data[i].class}</td>
+                    <td class="head">${data[i].father_name}</td>
+                    <td class="head">${data[i].contact}</td>
+                    <td class="head">${data[i].group}</td>
+                    <td class="head">${data[i].gender}</td>
+                    <td class="head">${data[i].profile}</td>
+                </tr>
+
+            `
+            document.getElementById('select_data').innerHTML+=`
+            <option value="${data[i].group}">${data[i].student_name}</option>
+            `
+            
+        }
+       
+        // }
+        </script>
